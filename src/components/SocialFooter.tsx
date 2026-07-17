@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import { CONFIG } from "@/config";
 import { fadeUp } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import {
@@ -10,34 +11,35 @@ import {
   WhatsAppIcon,
 } from "@/components/BrandIcons";
 
-const SOCIALS = [
-  {
-    href: "https://wa.me/60123456789",
-    label: "WhatsApp",
-    Icon: WhatsAppIcon,
-    hoverClass:
-      "hover:text-emerald-300 hover:ring-emerald-300/50 hover:shadow-[0_10px_32px_-10px_rgba(52,211,153,0.6)]",
-  },
-  {
-    href: "https://tiktok.com/@mua.sarah.kl",
-    label: "TikTok",
-    Icon: TikTokIcon,
-    hoverClass:
-      "hover:text-white hover:ring-white/40 hover:shadow-[0_10px_32px_-10px_rgba(255,255,255,0.45)]",
-  },
-  {
-    href: "https://instagram.com/mua.sarah.kl",
-    label: "Instagram",
-    Icon: InstagramIcon,
-    hoverClass:
-      "hover:text-rose-200 hover:ring-rose-300/50 hover:shadow-[0_10px_32px_-10px_rgba(244,63,94,0.7)]",
-  },
-] as const;
-
 export default function SocialFooter() {
+  const { socials, whatsappNumber, developer } = CONFIG;
+
+  const socialLinks = [
+    {
+      href: `https://wa.me/${whatsappNumber}`,
+      label: "WhatsApp",
+      Icon: WhatsAppIcon,
+      hoverClass:
+        "hover:text-emerald-300 hover:ring-emerald-300/50 hover:shadow-[0_10px_32px_-10px_rgba(52,211,153,0.6)]",
+    },
+    {
+      href: socials.tiktok,
+      label: "TikTok",
+      Icon: TikTokIcon,
+      hoverClass:
+        "hover:text-white hover:ring-white/40 hover:shadow-[0_10px_32px_-10px_rgba(255,255,255,0.45)]",
+    },
+    {
+      href: socials.instagram,
+      label: "Instagram",
+      Icon: InstagramIcon,
+      hoverClass:
+        "hover:text-rose-200 hover:ring-rose-300/50 hover:shadow-[0_10px_32px_-10px_rgba(244,63,94,0.7)]",
+    },
+  ];
+
   return (
-    <motion.footer variants={fadeUp} className="flex flex-col items-center">
-      {/* Pembahagi hiasan */}
+    <motion.footer variants={fadeUp} className="focus:outline-none flex flex-col items-center">
       <div className="flex w-full items-center gap-4" aria-hidden>
         <span className="h-px flex-1 bg-gradient-to-r from-transparent to-white/15" />
         <Sparkles className="size-3.5 text-rose-300/70" />
@@ -48,15 +50,15 @@ export default function SocialFooter() {
         Jom Berhubung
       </p>
 
-      {/* Ikon media sosial */}
+      {/* Ikon sosial */}
       <div className="mt-4 flex items-center gap-4">
-        {SOCIALS.map(({ href, label, Icon, hoverClass }) => (
+        {socialLinks.map(({ href, label, Icon, hoverClass }) => (
           <motion.a
             key={label}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${label} MUA Sarah`}
+            aria-label={`${label} MUA ${CONFIG.profile.name}`}
             whileHover={{ y: -4 }}
             whileTap={{ scale: 0.92 }}
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
@@ -72,20 +74,20 @@ export default function SocialFooter() {
         ))}
       </div>
 
-      {/* Hak cipta */}
+      {/* Hak cipta & Kredit Studio */}
       <div className="mt-9 space-y-1.5 text-center">
         <p className="text-[11px] text-white/40">
-          &copy; 2024 MUA Sarah. Hak Cipta Terpelihara.
+          &copy; {new Date().getFullYear()} MUA {CONFIG.profile.name}. Hak Cipta Terpelihara.
         </p>
         <p className="text-[9px] tracking-[0.3em] text-white/25 uppercase">
           Dibina oleh{" "}
           <a
-            href="https://wa.me/60123456789"
+            href={developer.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-rose-300/60 transition-colors hover:text-rose-300"
           >
-            Azri Safwan Web Studio
+            {developer.name}
           </a>
         </p>
       </div>
