@@ -4,7 +4,7 @@ export const CONFIG = {
   // ─── SISTEM KUNCI (KILL SWITCH) ───
   // set 'true' untuk KUNCI website (tunjuk skrin demo tamat)
   // set 'false' untuk UNLOCK website (tunjuk website penuh selepas bayar)
-  isLocked: false, 
+  isLocked: true, 
 
   // ─── TEMA WARNA UTAMA ───
   // Pilihan: "rose" (Emas Merah Jambu) | "emerald" (Hijau) | "blue" (Biru) | "gold" (Emas)
