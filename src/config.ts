@@ -60,25 +60,25 @@ export const CONFIG = {
   // ─── PORTFOLIO MEKAP (IMAGE GALLERY) ───
   portfolio: [
     {
-      src: "https://images.pexels.com/photos/31243099/pexels-photo-31243099.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1000&w=1000",
+      src: "nikah.jpg",
       tag: "Signature",
       title: "Mekap Nikah",
       alt: "Pemekap menyapu gincu pada bibir pengantin dengan penuh teliti",
     },
     {
-      src: "https://images.pexels.com/photos/28181772/pexels-photo-28181772.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1000&w=1000",
+      src: "tunang.jpg",
       tag: "Tunang",
-      title: "Soft Glam",
+      title: "Mekap Tunang",
       alt: "Potret glam lembut dengan barangan berlian di latar merah jambu",
     },
     {
-      src: "https://images.pexels.com/photos/15862280/pexels-photo-15862280.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1000&w=1000",
+      src: "sanding.jpg",
       tag: "Eksklusif",
       title: "Mekap Sanding",
       alt: "Wanita elegan memakai rantai kepala dan mutiara dengan solekan klasik",
     },
     {
-      src: "https://images.pexels.com/photos/8214068/pexels-photo-8214068.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1000&w=1000",
+      src: "dinner.jpg",
       tag: "Majlis",
       title: "Dinner & Event",
       alt: "Wanita tersenyum memakai maskara untuk majlis makan malam",
